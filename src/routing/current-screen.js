@@ -7,7 +7,7 @@ import MyWorkout from '../components/workout/workouts'
 const CurrentScreen = () => {
     return (
         <Routes>
-            <Route path="/"/>
+            <Route path="/" element={'Text!'}/>
             <Route path="/workout" element={<MyWorkout/>}/>
         </Routes>
     )
