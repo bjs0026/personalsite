@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Button, Container, Input, UnorderedList, ListItem} from "@chakra-ui/react";
 import useLocalStorage from "../helpers/local-storage";
 
@@ -17,6 +17,11 @@ const MyWorkout = props => {
         setValue('')
     }
 
+    const remove = () => {
+        removeWorkouts()
+        setList([])
+    }
+
     return (
         <Container>
             <Input
@@ -31,13 +36,13 @@ const MyWorkout = props => {
                 Save me!
             </Button>
             <Button
-                onClick={removeWorkouts}
+                onClick={remove}
             >
                 Remove me!
             </Button>
             <UnorderedList styleType="'-'">
                 {
-                    workout?.map(item =>
+                    list?.map(item =>
                         <ListItem
                             key={item}
                         >

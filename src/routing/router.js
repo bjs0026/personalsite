@@ -11,11 +11,11 @@
  */
 
 import React from "react"
-import {BrowserRouter, HashRouter} from "react-router-dom"
+import {HashRouter} from "react-router-dom"
 
 const Router = props =>
     React.createElement(
-        process.env.REACT_APP_HASH_ROUTING ? HashRouter : BrowserRouter,
+        HashRouter,
         props
     )
 
