@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://bjs0026.github.io/personalsite/",
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
@@ -14,6 +15,7 @@
     "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

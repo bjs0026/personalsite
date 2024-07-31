@@ -1,36 +1,24 @@
 import * as React from 'react'
 
 // 1. import `ChakraProvider` component
-import { ChakraProvider, Button } from '@chakra-ui/react'
+import {ChakraProvider} from '@chakra-ui/react'
 import logo from './logo.svg';
 import './App.css';
+import Masthead from "./components/app/masthead";
+import CurrentScreen from "./routing/current-screen";
+import Router from "./routing/router";
 
 function App() {
-  return (
-    <div className="App">
-      <ChakraProvider>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Woohoo we vibin! Here is some more testing just to check!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-          <Button
-              colorScheme={'teal'}
-          >
-              Chakra Test Button
-          </Button>
-      </header>
-      </ChakraProvider>
-    </div>
-  );
+    return (
+        <Router basename={'/'}>
+            <div className="App">
+                <ChakraProvider>
+                    <Masthead/>
+                    <CurrentScreen/>
+                </ChakraProvider>
+            </div>
+        </Router>
+    )
 }
 
 export default App;
