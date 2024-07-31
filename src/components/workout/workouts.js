@@ -1,12 +1,21 @@
 import React, {useState} from "react";
-import {Button, Container, Input, List, Text} from "@chakra-ui/react";
+import {Button, Container, Input, UnorderedList, ListItem} from "@chakra-ui/react";
 import useLocalStorage from "../helpers/local-storage";
 
 const MyWorkout = props => {
-    const [value, setValue] = useState()
+    const [value, setValue] = useState('')
     const [workout, setWorkout, removeWorkouts] = useLocalStorage('workout')
+    const [list, setList] = useState(workout ?? [])
 
     const handleChange = (event) => setValue(event.target.value)
+
+    const addWorkout = () => {
+        const newWorkouts = workout ? [...workout] : []
+        newWorkouts.push(value)
+        setWorkout(newWorkouts)
+        setList(newWorkouts)
+        setValue('')
+    }
 
     return (
         <Container>
@@ -17,7 +26,7 @@ const MyWorkout = props => {
                 size='sm'
             />
             <Button
-                onClick={() => setWorkout(value)}
+                onClick={addWorkout}
             >
                 Save me!
             </Button>
@@ -26,9 +35,16 @@ const MyWorkout = props => {
             >
                 Remove me!
             </Button>
-            <Text>
-                {workout}
-            </Text>
+            <UnorderedList styleType="'-'">
+                {
+                    workout?.map(item =>
+                        <ListItem
+                            key={item}
+                        >
+                            {item}
+                        </ListItem>
+                    )}
+            </UnorderedList>
         </Container>
     )
 }
