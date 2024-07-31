@@ -10,7 +10,7 @@ import Router from "./routing/router";
 
 function App() {
     return (
-        <Router basename={'/'}>
+        <Router basename={'/personalsite'}>
             <div className="App">
                 <ChakraProvider>
                     <Masthead/>
