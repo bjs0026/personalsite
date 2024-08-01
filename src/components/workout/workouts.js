@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Button, Container, Input, UnorderedList, ListItem} from "@chakra-ui/react";
 import useLocalStorage from "../helpers/local-storage";
 
