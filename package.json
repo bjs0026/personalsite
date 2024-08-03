@@ -2,10 +2,11 @@
   "name": "personalsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bjs0026.github.io/personalsite/",
+  "homepage": "https://bjs0026.github.io/personalsite/#",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
+    "@emotion/css": "^11.13.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.6",
