@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BStone Fun</title>
+    <style>
+        :root {
+            --mouse-x: 0px;
+            --mouse-y: 0px;
+        }
+
+        body {
+            height: 100vh;
+            background-color: rgb(20, 20, 20);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #mydiv {
+            position: relative;
+            top: 20%;
+            margin: auto;
+            height: 25%;
+            width: 25%;
+            background: radial-gradient(
+                    100px 100px at calc(var(--mouse-x) + 1px) calc(var(--mouse-y) + 1px),
+                    red 25%,
+                    grey 100%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        #inner {
+            position: relative;
+            height: 98%;
+            width: 98%;
+            background-color: #313131;
+            margin: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="mydiv">
+    <div id="inner"></div>
+</div>
+<script>
+    const root = document.documentElement;
+
+    document.addEventListener("mousemove", (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const width = rect.width;
+        const height = rect.height;
+
+        const mouseX = Math.round((x / width) * 100);
+        const mouseY = Math.round((y / height) * 100);
+
+        root.style.setProperty("--mouse-x", `${mouseX}%`);
+        root.style.setProperty("--mouse-y", `${mouseY}%`);
+    });
+</script>
+</body>
+</html>
